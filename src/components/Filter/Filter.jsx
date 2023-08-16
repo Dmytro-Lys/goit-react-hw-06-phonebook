@@ -1,8 +1,10 @@
 import css  from '../ContactForm/ContactForm.module.css'
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+let filter =""
+const handleChange = (e) => filter =  e.target.value
 
 
-export const Filter = ({filter, handleChange}) => {
+export const Filter = () => {
     return (
         <label className={css["contact-label"]}>
               Find contact by name    
@@ -17,7 +19,3 @@ export const Filter = ({filter, handleChange}) => {
     )
 }
 
-Filter.propTypes = {
-    filter: PropTypes.string.isRequired,
-    handleChange: PropTypes.func.isRequired
-}

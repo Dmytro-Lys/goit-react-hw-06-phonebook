@@ -12,15 +12,15 @@ import {loadPhoneBook, savePhoneBook} from '../service/localstorage'
 const App = () => {
    const [contacts, setContacts] = useState(loadPhoneBook());
   const [filter, setFilter] = useState("");
-  const firstRender = useRef(true)
+  // const firstRender = useRef(true)
  
-  useEffect(() => {
-    if (firstRender.current ) {
-      firstRender.current =  false
-      return
-    }
-    savePhoneBook(contacts)
-  }, [contacts]);
+  // useEffect(() => {
+  //   if (firstRender.current ) {
+  //     firstRender.current =  false
+  //     return
+  //   }
+  //   savePhoneBook(contacts)
+  // }, [contacts]);
 
   const  findContact = name => contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
 
@@ -40,9 +40,9 @@ const App = () => {
   return (
       <div className={css.container}>
         <h1 className={css.title}>Phonebook</h1>
-        <ContactForm onSubmit={values => addContact(values)}/>
+        <ContactForm />
         <h2 className={css.title}>Contacts</h2>
-        <Filter filter={filter} handleChange={filterChange}/>
+        <Filter />
         {contacts && <ContactList contacts={filterContacts()} onDel={delContact}/>}
       </div>
     )

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
 
-export const ContactForm = ({onSubmit}) => {
+export const ContactForm = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
 
@@ -22,7 +22,7 @@ export const ContactForm = ({onSubmit}) => {
   
   const handleSubmit = e => {
         e.preventDefault()
-        if (!onSubmit({name, number })) return
+        // if (!onSubmit({name, number })) return
         reset()
   }
   
