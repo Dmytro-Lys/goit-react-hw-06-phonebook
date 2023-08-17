@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const contactsInitialState = [{
-    id: 1,
+    id: "1",
     name: "Alex Bolduin",
     number: "0675438032"
 }];
