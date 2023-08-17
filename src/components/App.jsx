@@ -2,39 +2,9 @@ import css from "./App.module.css"
 import { ContactForm } from "./ContactForm/ContactForm";
 import { ContactList } from "./ContactList/ContactList"
 import {Filter} from './Filter/Filter'
-import { useState, useEffect, useRef } from "react";
-import { nanoid } from "nanoid";
-import Notiflix from 'notiflix';
-import 'notiflix/src/notiflix.css';
-import {loadPhoneBook, savePhoneBook} from '../service/localstorage'
-
 
 const App = () => {
-  //  const [contacts, setContacts] = useState(loadPhoneBook());
-  // const [filter, setFilter] = useState("");
-  // const firstRender = useRef(true)
- 
-  // useEffect(() => {
-  //   if (firstRender.current ) {
-  //     firstRender.current =  false
-  //     return
-  //   }
-  //   savePhoneBook(contacts)
-  // }, [contacts]);
 
-  // const  findContact = name => contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
-
-  //  const addContact = contact => {
-  //    if (findContact(contact.name)) return Notiflix.Notify.failure(`${contact.name} is already in contacts`); 
-  //   return setContacts( prev => {
-  //     return [ ...prev, {id: nanoid(), ...contact }]  
-  //   }) || true
-  // }
-  
-
-
-
-  
   return (
       <div className={css.container}>
         <h1 className={css.title}>Phonebook</h1>
