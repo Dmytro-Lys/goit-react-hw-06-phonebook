@@ -10,8 +10,8 @@ import {loadPhoneBook, savePhoneBook} from '../service/localstorage'
 
 
 const App = () => {
-   const [contacts, setContacts] = useState(loadPhoneBook());
-  const [filter, setFilter] = useState("");
+  //  const [contacts, setContacts] = useState(loadPhoneBook());
+  // const [filter, setFilter] = useState("");
   // const firstRender = useRef(true)
  
   // useEffect(() => {
@@ -22,20 +22,18 @@ const App = () => {
   //   savePhoneBook(contacts)
   // }, [contacts]);
 
-  const  findContact = name => contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
+  // const  findContact = name => contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
 
-   const addContact = contact => {
-     if (findContact(contact.name)) return Notiflix.Notify.failure(`${contact.name} is already in contacts`); 
-    return setContacts( prev => {
-      return [ ...prev, {id: nanoid(), ...contact }]  
-    }) || true
-  }
+  //  const addContact = contact => {
+  //    if (findContact(contact.name)) return Notiflix.Notify.failure(`${contact.name} is already in contacts`); 
+  //   return setContacts( prev => {
+  //     return [ ...prev, {id: nanoid(), ...contact }]  
+  //   }) || true
+  // }
   
-  const filterChange = e => setFilter( e.target.value)
 
-  const filterContacts = () => contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()))
 
-  const delContact = id => setContacts(prev => prev.filter(contact => contact.id !== id))
+
   
   return (
       <div className={css.container}>
@@ -43,7 +41,7 @@ const App = () => {
         <ContactForm />
         <h2 className={css.title}>Contacts</h2>
         <Filter />
-        {contacts && <ContactList contacts={filterContacts()} onDel={delContact}/>}
+        <ContactList/>
       </div>
     )
 
